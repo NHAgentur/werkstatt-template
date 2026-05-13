@@ -5,7 +5,17 @@
       "PowerShell(npm install *)",
       "PowerShell(npx tsc --noEmit 2>&1 | Select-Object -Last 60)",
       "PowerShell(npx tsc --noEmit; \"EXIT: $LASTEXITCODE\")",
-      "PowerShell(npx next build 2>&1 | Select-Object -Last 80; \"EXIT: $LASTEXITCODE\")"
+      "PowerShell(npx next build 2>&1 | Select-Object -Last 80; \"EXIT: $LASTEXITCODE\")",
+      "PowerShell(npx next build 2>&1 | Select-Object -Last 60; \"EXIT: $LASTEXITCODE\")",
+      "PowerShell(npx next build 2>&1 | Select-Object -Last 35; \"EXIT: $LASTEXITCODE\")",
+      "PowerShell($env:PORT=\"3001\"; npx next dev -p 3001)",
+      "Bash(curl -s -X POST http://localhost:3001/api/kontakt -H \"Content-Type: application/json\" -d '{\"name\":\"Test\",\"email\":\"a@b.de\",\"nachricht\":\"Hallo\"}')",
+      "Bash(curl -s -X POST http://localhost:3001/api/kontakt -H \"Content-Type: application/json\" -d '{\"name\":\"Test\"}')",
+      "Bash(curl -s -X POST http://localhost:3001/api/termin -H \"Content-Type: application/json\" -d '{\"name\":\"Test\",\"email\":\"a@b.de\",\"telefon\":\"123\",\"nachricht\":\"x\"}')",
+      "Bash(curl -s -X POST http://localhost:3001/api/termin -H \"Content-Type: application/json\" -d '{\"name\":\"Test\",\"email\":\"a@b.de\",\"telefon\":\"123\",\"nachricht\":\"x\",\"datenschutz\":\"on\"}')",
+      "Bash(curl -s http://localhost:3001/robots.txt)",
+      "Bash(curl -s http://localhost:3001/sitemap.xml)",
+      "Bash(curl -s http://localhost:3001/)"
     ]
   }
 }

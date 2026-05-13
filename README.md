@@ -90,9 +90,18 @@ Wird für JSON-LD, Sitemap, OpenGraph und Canonical-URLs verwendet.
 ### 5. Mail-Versand
 
 Die API-Routen `app/api/kontakt/route.ts` und `app/api/termin/route.ts`
-loggen aktuell nur in die Konsole. Für Produktion einen Mail-Provider
-einbinden (Resend, Postmark, SMTP). `MAIL_*` Variablen in `.env.local`
-setzen.
+gehen über `lib/mailer.ts` an **Resend**. Ohne `RESEND_API_KEY` läuft
+alles im **Dry-Run-Modus** (Console-Log, keine echten Mails) — bequem
+für lokale Entwicklung. In Produktion in `.env.local` setzen:
+
+```
+RESEND_API_KEY=re_xxx
+MAIL_FROM=noreply@deine-werkstatt.de   # muss bei Resend verifiziert sein
+MAIL_TO=info@deine-werkstatt.de        # Posteingang der Werkstatt
+```
+
+Anderen Provider statt Resend? Einfach `lib/mailer.ts#sendInquiry` ersetzen
+— Aufrufer in den API-Routes bleiben unverändert.
 
 ### 6. Impressum & Datenschutz
 

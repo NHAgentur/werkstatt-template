@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sendInquiry } from "@/lib/mailer";
 
 type Payload = {
   name?: string;
@@ -18,11 +19,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Pflichtfelder fehlen" }, { status: 422 });
   }
 
-  // Hier den eigentlichen Mail-Versand anbinden (z.B. Resend, Postmark, SMTP).
-  // Beispiel: await mailer.send({ from: ..., to: ..., subject: ..., text: ... });
-
-  if (process.env.NODE_ENV !== "production") {
-    console.log("[Kontakt]", data);
+  const result = await sendInquiry("Neue Kontaktanfrage", data);
+  if (!result.ok) {
+    return NextResponse.json({ error: result.error }, { status: 502 });
   }
 
   return NextResponse.json({ ok: true });
