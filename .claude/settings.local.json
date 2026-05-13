@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Command *)",
+      "PowerShell(npm install *)",
+      "PowerShell(npx tsc --noEmit 2>&1 | Select-Object -Last 60)",
+      "PowerShell(npx tsc --noEmit; \"EXIT: $LASTEXITCODE\")",
+      "PowerShell(npx next build 2>&1 | Select-Object -Last 80; \"EXIT: $LASTEXITCODE\")"
+    ]
+  }
+}
