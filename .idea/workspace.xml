@@ -1,14 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="08c1966d-633a-4d2a-91a0-9d63ceedfadc" name="Changes" comment="">
+    <list default="true" id="4f6f0e5f-6885-4be5-b259-ce3abf4a6f3d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.claude/settings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Werkstatttemplate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Werkstatttemplate.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/kontakt/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/kontakt/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/termin/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/termin/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/kontakt/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/termin/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/datenschutz/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/impressum/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/kontakt/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/leistungen/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/news/[slug]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/news/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/not-found.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/robots.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/service/[slug]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/sitemap.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/werkstatt/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/Faq.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sections/Faq.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/FeatureGrid.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/Footer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sections/Hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/Kennzahlen.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/KontaktSektion.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/Kundenstimmen.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/Leistungen.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/Marquee.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sections/Marquee.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/Mission.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sections/Mission.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/NewsTeaser.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/PartnerLogos.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/TerminFormular.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/Trust.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/seo/JsonLd.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/accordion.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/card.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/icon.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/input.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/reveal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/section-heading.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/textarea.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/mailer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/werkstatt.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/partner/atu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/partner/bosch.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/partner/dekra.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/partner/kues.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/partner/tuev-sued.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,48 +80,49 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "NHAgentur"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;NHAgentur&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/NHAgentur/werkstatt-template.git",
-    "accountId": "113784ce-2121-4486-b016-bde152f7699e"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NHAgentur/werkstatt-template.git&quot;,
+    &quot;accountId&quot;: &quot;113784ce-2121-4486-b016-bde152f7699e&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5,
-  "fromUser": false
-}]]></component>
-  <component name="ProjectId" id="3Dgoz0NqZaKqcW7VHS4pt7NaSC2" />
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="3DgqvkhBPzDn36mJk5aErmsahJm" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "js.debugger.nextJs.config.created.client": "true",
-    "js.debugger.nextJs.config.created.server": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="npm.Next.js: server-side">
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
@@ -84,12 +147,13 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="08c1966d-633a-4d2a-91a0-9d63ceedfadc" name="Changes" comment="" />
-      <created>1778713332878</created>
+      <changelist id="4f6f0e5f-6885-4be5-b259-ce3abf4a6f3d" name="Changes" comment="" />
+      <created>1778714295395</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1778713332878</updated>
-      <workItem from="1778713333882" duration="514000" />
+      <updated>1778714295395</updated>
+      <workItem from="1778714297383" duration="5040000" />
+      <workItem from="1778720950229" duration="5349000" />
     </task>
     <servers />
   </component>

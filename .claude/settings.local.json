@@ -15,7 +15,23 @@
       "Bash(curl -s -X POST http://localhost:3001/api/termin -H \"Content-Type: application/json\" -d '{\"name\":\"Test\",\"email\":\"a@b.de\",\"telefon\":\"123\",\"nachricht\":\"x\",\"datenschutz\":\"on\"}')",
       "Bash(curl -s http://localhost:3001/robots.txt)",
       "Bash(curl -s http://localhost:3001/sitemap.xml)",
-      "Bash(curl -s http://localhost:3001/)"
+      "Bash(curl -s http://localhost:3001/)",
+      "Bash(npx --yes create-next-app@latest rw-kfz-clone --typescript --tailwind --app --no-src-dir --eslint --import-alias \"@/*\" --use-npm --yes)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "PowerShell(Get-Process *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/)",
+      "PowerShell(Remove-Item *)",
+      "PowerShell($nm = Get-Item node_modules; \"node_modules LinkType: $\\($nm.LinkType\\)\"; \"node_modules Target : $\\($nm.Target\\)\"; \"node_modules size  : $\\([math]::Round\\(\\(Get-ChildItem node_modules -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum\\).Sum / 1MB, 1\\)\\) MB\"; \"\"; \"C:\\\\dev-cache\\\\werkstatt-modules size: $\\([math]::Round\\(\\(Get-ChildItem C:\\\\dev-cache\\\\werkstatt-modules -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum\\).Sum / 1MB, 1\\)\\) MB\"; \"\"; $next = Get-Item .next -ErrorAction SilentlyContinue; \".next LinkType : $\\($next.LinkType\\)\"; \".next Target  : $\\($next.Target\\)\")",
+      "PowerShell(pnpm config *)",
+      "PowerShell(pnpm install *)",
+      "PowerShell($nm = \\(Get-ChildItem node_modules -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object Length -Sum\\).Sum; $store = \\(Get-ChildItem C:\\\\dev-cache\\\\pnpm-store -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object Length -Sum\\).Sum; \"D:\\\\ node_modules  : $\\([math]::Round\\($nm/1MB,1\\)\\) MB\"; \"C:\\\\ pnpm-store   : $\\([math]::Round\\($store/1MB,1\\)\\) MB\"; \"node_modules dir count: $\\(\\(Get-ChildItem node_modules -Directory\\).Count\\)\")",
+      "PowerShell($f = Get-ChildItem node_modules\\\\.pnpm\\\\tailwindcss@4.3.0\\\\node_modules\\\\tailwindcss -File -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1; \"Test file: $\\($f.FullName\\)\"; \"Size: $\\($f.Length\\) bytes\"; \"LinkType: $\\($f.LinkType\\)\"; \"\"; \"--- fsutil hardlink list \\(zeigt alle Pfade die diesen physischen Block teilen\\) ---\"; fsutil hardlink list $f.FullName)",
+      "PowerShell(cmd /c 'rmdir node_modules' 2>&1 | Out-String; \"node_modules exists: $\\(Test-Path node_modules\\)\"; \"C:\\\\ target still exists: $\\(Test-Path C:\\\\dev-cache\\\\werkstatt-modules\\)\"; \"C:\\\\ target is empty: $\\(@\\(Get-ChildItem C:\\\\dev-cache\\\\werkstatt-modules -Force\\).Count -eq 0\\)\")",
+      "PowerShell(Test-Path *)",
+      "PowerShell(Start-Process \"ms-settings:developers\"; \"Settings-Seite geöffnet.\")",
+      "PowerShell(New-Item *)",
+      "PowerShell(\"--- .npmrc vorhanden? ---\"; Test-Path .npmrc; if \\(Test-Path .npmrc\\) { Get-Content .npmrc }; \"--- .gitignore enthaelt .npmrc? ---\"; \\(Select-String -Path .gitignore -Pattern '^\\\\.npmrc' -ErrorAction SilentlyContinue\\) -ne $null)"
     ]
   }
 }

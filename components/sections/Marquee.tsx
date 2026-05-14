@@ -1,23 +1,54 @@
-import { werkstatt } from "@/lib/werkstatt.config";
+"use client";
 
-export function Marquee() {
-  const list = [...werkstatt.marqueeBegriffe, ...werkstatt.marqueeBegriffe];
+import { motion } from "framer-motion";
+
+const items = [
+  "Klimaanlagen-Wartung KFZ",
+  "Achsvermessung Sonthofen",
+  "Bremsen- und Auspuff-Service",
+  "Unfallinstandsetzung Oberallgäu",
+  "Reifenservice in Sonthofen",
+  "TÜV und Abgasuntersuchung",
+];
+
+function Row({
+  duration,
+  reverse = false,
+}: {
+  duration: number;
+  reverse?: boolean;
+}) {
+  const loop = [...items, ...items];
   return (
-    <section
-      aria-label="Service-Begriffe"
-      className="border-y border-border bg-card py-6 overflow-hidden"
-    >
-      <div className="flex w-max gap-12 animate-marquee whitespace-nowrap">
-        {list.map((b, i) => (
+    <div className="flex overflow-hidden">
+      <motion.div
+        className="flex shrink-0 gap-12 pr-12"
+        animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
+        transition={{
+          duration,
+          ease: "linear",
+          repeat: Infinity,
+        }}
+      >
+        {loop.map((item, i) => (
           <span
-            key={`${b}-${i}`}
-            className="flex items-center gap-12 font-display text-2xl font-bold tracking-tight text-foreground/70 md:text-3xl"
+            key={`${item}-${i}`}
+            className="font-display text-2xl md:text-3xl lg:text-4xl uppercase tracking-wide text-muted/30 hover:text-accent transition-colors whitespace-nowrap select-none"
           >
-            {b}
-            <span className="h-2 w-2 rotate-45 bg-accent" aria-hidden />
+            {item}
+            <span className="text-accent/40 ml-12">&bull;</span>
           </span>
         ))}
-      </div>
+      </motion.div>
+    </div>
+  );
+}
+
+export default function Marquee() {
+  return (
+    <section className="bg-dark border-y border-border overflow-hidden py-8 space-y-3">
+      <Row duration={30} />
+      <Row duration={40} reverse />
     </section>
   );
 }

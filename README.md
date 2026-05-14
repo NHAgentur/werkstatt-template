@@ -1,173 +1,144 @@
-# Werkstatt-Template
+# R&W Kfz-Service — Akquise-Mockup
 
-Wiederverwendbares Next.js-14-Template für deutsche KFZ-Werkstätten.
-Inspiriert von Struktur und Sektionsidee marktüblicher Werkstatt-Websites,
-voll datengetrieben über ein zentrales Config-File. Für einen neuen Kunden
-werden ausschließlich **`lib/werkstatt.config.ts`** und **`/public/images`**
-angepasst – keine Code-Änderungen nötig.
+Pixel-naher Klon der Startseite von [rw-kfz-service.de](https://rw-kfz-service.de/) als Akquise-Mockup für **NH Agentur**.
 
-## Tech-Stack
+Das Mockup zeigt eine vollständige One-Pager-Landing-Page im Automotive-Look (dunkel/anthrazit mit Orange-Akzent), gebaut mit modernem Stack und sauberen Animationen.
 
-- **Next.js 14** (App Router, TypeScript, RSC + Client Components)
-- **Tailwind CSS** mit erweitertem Theme (CSS-Variablen für Farben)
-- **shadcn/ui-Stil** (Button, Input, Textarea, Card, Accordion – inhouse)
-- **Framer Motion** für sanfte Scroll-Animationen
-- **next/image** mit AVIF/WebP und Lazy Loading
-- **Lucide Icons**
-- **JSON-LD** (`AutoRepair` Schema.org) + OpenGraph + Twitter Cards
-- Automatische `sitemap.xml` und `robots.txt`
+## Stack
 
-## Schnellstart
+- **Next.js 16** (App Router, Turbopack)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS v4** (CSS-first Konfiguration via `@theme` in `app/globals.css`)
+- **Framer Motion** (Scroll-Animationen, Marquee, Accordion, Toast, Stagger)
+- **Lucide React** (Icon-Set)
+- **next/font/google** für Inter & Oswald
 
-```bash
-pnpm install
-cp .env.example .env.local
-pnpm dev
-```
+> Hinweis: Spec lautete ursprünglich Next 14 + Tailwind v3. `create-next-app@latest` hat die jeweils aktuellen Majors installiert (Next 16, Tailwind v4). Tokens liegen daher in `app/globals.css` unter `@theme`, nicht in `tailwind.config.ts`.
 
-App läuft unter http://localhost:3000.
-
-Build:
+## Setup
 
 ```bash
-pnpm build
-pnpm start
+npm install
+npm run dev
 ```
 
-## Wie passe ich das Template für einen neuen Kunden an?
+Aufrufen unter <http://localhost:3000>.
 
-### 1. Daten ändern (Pflicht)
+### Weitere Skripte
 
-Öffne **`lib/werkstatt.config.ts`** und ersetze die Dummy-Werte. Das Schema
-ist in `lib/types.ts` typisiert, TypeScript meckert sofort, falls ein Feld
-fehlt.
-
-Pflicht-Anpassungen:
-
-- `name`, `kurzName`, `slogan`
-- `inhaber`, `inhaberRolle`, `inhaberPortrait`
-- `gruendungsjahr`, `region`
-- `beschreibungKurz`, `beschreibungLang`
-- `kontakt` (Telefon, E-Mail, Adresse, Geo-Koordinaten)
-- `oeffnungszeiten`
-- `leistungen` (Slug, Titel, Kurz-/Langbeschreibung, Bild, Icon, Highlights)
-- `kennzahlen`, `kundenstimmen`, `faq`, `news`
-
-### 2. Bilder austauschen
-
-Lege Kunden-Fotos unter **`/public/images`** ab und referenziere sie aus dem
-Config-File (z.B. `bild: "/images/leistungen/reifenwechsel.jpg"`). Externe
-Unsplash-URLs sind nur Platzhalter.
-
-Logo: `public/images/logo.svg` (kann durch PNG/SVG ersetzt werden).
-
-### 3. Farben anpassen
-
-Im Config-File:
-
-```ts
-theme: {
-  primary: "220 30% 12%",          // HSL ohne hsl() — Hauptfarbe (Anthrazit/Dunkelblau)
-  primaryForeground: "0 0% 98%",   // Text auf Hauptfarbe
-  accent: "18 92% 55%",            // Akzent (Orange/Rot) für CTAs
-  accentForeground: "0 0% 100%",
-}
+```bash
+npm run build   # Produktions-Build (~2 s, statisch prerendert)
+npm run start   # gebauten Build servieren
+npm run lint    # ESLint
 ```
-
-Wird zur Laufzeit in `app/layout.tsx` als CSS-Variable gesetzt – keine
-Tailwind-Konfiguration ändern nötig.
-
-### 4. SEO / Domain
-
-In `.env.local`:
-
-```
-NEXT_PUBLIC_SITE_URL=https://www.deine-kunden-domain.de
-```
-
-Wird für JSON-LD, Sitemap, OpenGraph und Canonical-URLs verwendet.
-
-### 5. Mail-Versand
-
-Die API-Routen `app/api/kontakt/route.ts` und `app/api/termin/route.ts`
-gehen über `lib/mailer.ts` an **Resend**. Ohne `RESEND_API_KEY` läuft
-alles im **Dry-Run-Modus** (Console-Log, keine echten Mails) — bequem
-für lokale Entwicklung. In Produktion in `.env.local` setzen:
-
-```
-RESEND_API_KEY=re_xxx
-MAIL_FROM=noreply@deine-werkstatt.de   # muss bei Resend verifiziert sein
-MAIL_TO=info@deine-werkstatt.de        # Posteingang der Werkstatt
-```
-
-Anderen Provider statt Resend? Einfach `lib/mailer.ts#sendInquiry` ersetzen
-— Aufrufer in den API-Routes bleiben unverändert.
-
-### 6. Impressum & Datenschutz
-
-`app/impressum/page.tsx` und `app/datenschutz/page.tsx` zieht Adresse und
-Inhaber automatisch aus dem Config-File, enthält aber zusätzlich
-Platzhalter für USt-IdNr., HRB, etc. **Vor Veröffentlichung juristisch
-prüfen lassen.**
 
 ## Projektstruktur
 
 ```
 app/
-  layout.tsx          ─ Root-Layout, Header/Footer, JSON-LD, Theme-Vars
-  page.tsx            ─ Startseite (Long-Scroll mit 13 Sektionen)
-  werkstatt/          ─ Über-uns-Detailseite
-  leistungen/         ─ Übersicht aller Services
-  service/[slug]/     ─ Statisch generierte Detailseiten je Leistung
-  news/, news/[slug]/ ─ Blog-Übersicht und Artikel
-  kontakt/            ─ Vollformular + Karte
-  impressum/, datenschutz/
-  api/kontakt/, api/termin/  ─ Formular-Endpoints
-  sitemap.ts, robots.ts
+  layout.tsx          # Root-Layout (Inter + Oswald, dunkles Theme, deutsche Metadata)
+  page.tsx            # One-Pager: rendert alle Sections in Reihenfolge
+  globals.css         # Tailwind v4 @theme + Reset + Custom-Scrollbar
+
 components/
-  sections/           ─ Alle Startseiten-Sektionen
-  ui/                 ─ Wiederverwendbare Primitive (Button, Card, …)
-  seo/JsonLd.tsx      ─ LocalBusiness Schema.org JSON-LD
+  TopBar.tsx          # Info-Leiste oben (Mail / Öffnungszeiten / Adresse)
+  Header.tsx          # Sticky Nav, Dropdown "Leistungen", Mobile-Drawer
+  Footer.tsx          # 4-Spalten-Footer + Bottom-Bar
+
+  sections/
+    Hero.tsx          # 2-spaltig, große H1, Akzent-Glow, schwebende Stat-Card
+    Mission.tsx       # Portrait-Card + Mission-Text + Mini-Stats
+    Services.tsx      # 12 Service-Karten, Icon-Badges, Stagger-Animation
+    Stats.tsx         # 3 CountUp-Stats (Framer-Motion useInView + animate)
+    WhyTrust.tsx      # 3 Trust-Pillars (Personal / Technik / Service)
+    Marquee.tsx       # Endlos-Scrolling-Band, 2 Reihen gegenläufig
+    Highlights.tsx    # 6 Highlight-Cards mit Icon links
+    FAQ.tsx           # Sticky-Linke-Spalte + 4-fach Accordion rechts
+    ContactForm.tsx   # Termin-Formular mit Mock-Submit + Success-Toast
+    Partners.tsx      # 3 Partner-Logos (TÜV SÜD / KÜS / DEKRA)
+    News.tsx          # 2 Blog-Karten mit Bild-Platzhaltern
+    Testimonials.tsx  # 3 Kunden-Bewertungen + Sterne + Google-Maps-Link
+    FinalCTA.tsx      # Großer Phone-Button mit zentralem Akzent-Glow
+
 lib/
-  werkstatt.config.ts ─ Zentrale Werkstatt-Daten (PFLICHT-ANPASSUNG)
-  types.ts            ─ Typen für Config
-  utils.ts            ─ cn(), formatDateDE(), telHref()
-public/
-  images/             ─ Logos, Fotos, Partner-Logos
+  services.ts         # 12 Services + Kontaktdaten (zentrale Datenquelle)
 ```
 
-## Sektionsreihenfolge der Startseite
+## Design-Tokens
 
-1. Sticky Header (Logo, Nav mit Mega-Dropdown, Telefon-CTA)
-2. Hero (Headline, Bild, Scroll-Indikator, gepunktetes Grid-Background)
-3. Mission / Über-uns (Porträt links, Fließtext rechts)
-4. Leistungen-Grid (3 Spalten Desktop / 1 Mobile)
-5. Kennzahlen-Counter (animiert, dunkler Hintergrund)
-6. Trust-Pillars (3 Spalten)
-7. Marquee / Laufband (endloses Scrollen)
-8. Feature-Grid (6 Mini-Kacheln)
-9. FAQ (Accordion)
-10. Termin-Formular
-11. Partner-Logos (Graustufen, Hover → farbig)
-12. News-Teaser (3 Artikel)
-13. Kundenstimmen (Google-Reviews)
-14. Kontakt-Sektion + Mini-Formular
+Definiert in `app/globals.css` über `@theme {}` (Tailwind v4):
 
-## Lighthouse / Performance
+| Utility | Farbe | Zweck |
+| --- | --- | --- |
+| `bg-dark` / `text-dark` | `#1a1a1a` | Body-Hintergrund |
+| `bg-card` | `#222222` | Card-Hintergrund |
+| `bg-accent` / `text-accent` | `#ff6b1a` | Orange-Akzent (CTA, Icons) |
+| `hover:bg-accent-hover` | `#e85d12` | Akzent-Hover |
+| `text-main` | `#ffffff` | Body-Text |
+| `text-muted` | `#a0a0a0` | Sekundär-Text |
+| `border-border` | `#333333` | Borders & Trennlinien |
 
-- next/image mit AVIF/WebP, korrekten `sizes`
-- Inter + Manrope via `next/font` (selbst-gehostet, Display swap)
-- RSC by default, Client Components nur wo nötig (Animation, Forms)
-- Ziel: Performance ≥ 90 mobil, ≥ 95 desktop
+Schriften: `font-sans` = Inter (400/500/600), `font-display` = Oswald (500/600/700).
 
-## Bekannte Punkte / Erweiterungen
+## Bilder & Assets — alle Platzhalter
 
-- News-Inhalte derzeit aus Config (für CMS-Anbindung später leicht
-  ausgetauschbar)
-- Karte über OpenStreetMap-iFrame (DSGVO-freundlicher als Google Maps);
-  alternativ Leaflet/Mapbox einbauen
-- Cookie-Banner ist **nicht** enthalten – bei Tracking-Tools nachrüsten
+> **Wichtig:** Alle visuellen Assets sind Platzhalter. Vor Pitch / Live-Schaltung müssen sie durch Originalmaterial ersetzt werden.
 
-## Lizenz
+### Aktuelle Platzhalter
 
-Template für die interne Verwendung. Inhalte und Bilder pro Kunde lizenzieren.
+- **Hero-Image** — `placehold.co/1200x900` mit Wrench-Icon-Overlay
+- **Portrait Christian Kling** (Mission) — `placehold.co/600x800` mit User-Icon-Overlay
+- **News-Thumbnails** (2x) — `placehold.co/800x500` mit Newspaper-Icon-Overlay
+- **Service-Karten** (12x) — Gradient-Hintergrund mit Lucide-Icon (kein Foto, bewusst icon-basiert)
+- **Partner-Logos** — Text-Platzhalter "TÜV SÜD" / "KÜS" / "DEKRA" auf grauen Cards
+- **Logo "R&W"** — als Oswald-Schriftzug, kein Bild-Asset
+
+`placehold.co` ist in `next.config.ts` unter `images.remotePatterns` für Next/Image freigegeben.
+
+### TODO vor echtem Einsatz
+
+- [ ] **Logo "R&W"** als SVG nach `public/images/logo.svg` (ersetzt den `font-display`-Schriftzug in Header & Footer)
+- [ ] **Hero-Image** — Foto/Render eines Werkstatt-Wagens nach `public/images/hero.jpg` (Empfehlung: 1600×1200)
+- [ ] **Portrait Christian Kling** nach `public/images/team/christian-kling.jpg` (Empfehlung: 800×1067, 3:4)
+- [ ] **Service-Bilder** (12x) nach `public/images/services/{slug}.jpg` (4:3, ~800×600) — Slugs siehe `lib/services.ts`
+- [ ] **News-Thumbnails** nach `public/images/news/qualitaetsversprechen.jpg` und `public/images/news/jubilaeum.jpg` (16:10, ~1200×750)
+- [ ] **Partner-Logos** als SVGs nach `public/images/partner/{tuev-sued,kues,dekra}.svg`
+- [ ] **Favicon** — eigenes Icon nach `app/favicon.ico` (aktuell Next.js-Default)
+- [ ] **Open-Graph-Bild** nach `public/og-image.jpg` (1200×630) und in `app/layout.tsx` `metadata.openGraph.images` ergänzen
+
+## Inhalte
+
+Alle Inhalte (Adresse, Telefon, Mail, Öffnungszeiten, Service-Beschreibungen, Testimonials, FAQ, News-Titel) sind in `lib/services.ts` bzw. direkt in den jeweiligen Section-Komponenten gepflegt.
+
+### Echte Kontaktdaten
+
+- **Adresse:** Hindelanger Str. 27, 87527 Sonthofen
+- **Telefon:** +49 8321 89052
+- **E-Mail:** info@rw-kfz-service.de
+- **Öffnungszeiten:** Mo–Do 7:00–12:00 / 13:00–17:00, Fr 7:00–12:00
+
+## Mockup-Verhalten
+
+- **Kontaktformular** loggt Anfragen in die Browser-Konsole (`console.log("[Mockup] Termin-Anfrage:", ...)`) und zeigt einen 4-Sekunden-Toast. Vor Live-Schaltung an Mailer-API anbinden (z. B. Resend / Postmark / Mailto-Fallback).
+- **Nav-Links** in Header & Footer sind Anker (`#mission`, `#leistungen`, `#kontakt`, …) — keine echten Unterseiten.
+- **Smooth Scroll** ist über `scroll-behavior: smooth` auf `<html>` aktiv.
+- **Service-Karten** verlinken alle auf `#leistungen`. Für echte Detailseiten siehe Slugs in `lib/services.ts` (URL-safe vorbereitet).
+
+## Responsive Breakpoints
+
+Alle Sections sind vorbereitet für:
+
+- **Mobile** (375 px) — Single-Column, Hamburger-Menü mit Sheet-Drawer, ausgeblendete TopBar
+- **Tablet** (768 px) — 2-Spalten-Grids, TopBar sichtbar
+- **Desktop** (1440 px+) — volle Multi-Column-Layouts mit Sticky-Elementen
+
+## Build-Status
+
+- `npm run build` läuft erfolgreich, Route `/` wird statisch prerendert (○ Static).
+- TypeScript-Check sauber.
+- Keine Console-Errors oder Hydration-Warnings.
+
+## Verwendungszweck
+
+Internes Akquise-Mockup für **NH Agentur**. Vor produktiver Verwendung Freigabe des Endkunden einholen.

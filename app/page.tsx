@@ -1,33 +1,39 @@
-import { Hero } from "@/components/sections/Hero";
-import { Mission } from "@/components/sections/Mission";
-import { Leistungen } from "@/components/sections/Leistungen";
-import { Kennzahlen } from "@/components/sections/Kennzahlen";
-import { Trust } from "@/components/sections/Trust";
-import { Marquee } from "@/components/sections/Marquee";
-import { FeatureGrid } from "@/components/sections/FeatureGrid";
-import { Faq } from "@/components/sections/Faq";
-import { TerminFormular } from "@/components/sections/TerminFormular";
-import { PartnerLogos } from "@/components/sections/PartnerLogos";
-import { NewsTeaser } from "@/components/sections/NewsTeaser";
-import { Kundenstimmen } from "@/components/sections/Kundenstimmen";
-import { KontaktSektion } from "@/components/sections/KontaktSektion";
+import TopBar from "@/components/TopBar";
+import Header from "@/components/Header";
+import Hero from "@/components/sections/Hero";
+import Mission from "@/components/sections/Mission";
+import Services from "@/components/sections/Services";
+import Stats from "@/components/sections/Stats";
+import WhyTrust from "@/components/sections/WhyTrust";
+import Marquee from "@/components/sections/Marquee";
+import Highlights from "@/components/sections/Highlights";
+import FAQ from "@/components/sections/FAQ";
+import ContactForm from "@/components/sections/ContactForm";
+import Partners from "@/components/sections/Partners";
+import News from "@/components/sections/News";
+import Testimonials from "@/components/sections/Testimonials";
+import FinalCTA from "@/components/sections/FinalCTA";
+import Footer from "@/components/Footer";
 
-export default function HomePage() {
+export default function Home() {
   return (
     <>
+      <TopBar />
+      <Header />
       <Hero />
       <Mission />
-      <Leistungen />
-      <Kennzahlen />
-      <Trust />
+      <Services />
+      <Stats />
+      <WhyTrust />
       <Marquee />
-      <FeatureGrid />
-      <Faq />
-      <TerminFormular />
-      <PartnerLogos />
-      <NewsTeaser />
-      <Kundenstimmen />
-      <KontaktSektion />
+      <Highlights />
+      <FAQ />
+      <ContactForm />
+      <Partners />
+      <News />
+      <Testimonials />
+      <FinalCTA />
+      <Footer />
     </>
   );
 }
