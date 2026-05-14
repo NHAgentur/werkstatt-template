@@ -1,0 +1,5 @@
+virtualStoreDir: C:/dev-cache/werkstatt-vstore
+
+allowBuilds:
+  sharp: true
+  unrs-resolver: true
